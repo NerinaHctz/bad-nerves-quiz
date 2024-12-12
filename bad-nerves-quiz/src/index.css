@@ -91,7 +91,7 @@ button {
 .result-container p {
   font-size: 1.2em;
   color: red;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
   font-weight: 500;
 }
 
@@ -129,7 +129,7 @@ button {
 
 .timer-container {
   position: absolute;
-  bottom: -100px;
+  bottom: 30px;
   left: 20px;
 }
 

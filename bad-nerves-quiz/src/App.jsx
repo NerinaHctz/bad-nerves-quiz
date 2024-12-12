@@ -189,13 +189,14 @@ function App() {
             questionData={questions[currentQuestion]}
             onAnswer={handleAnswer}
           />
-          <div className='timer-container'>
-            <div className='timer-circle'>
-              <p>{timeLeft} sec</p>
-            </div>
-          </div>
+
         </div>
       )}
+    </div>
+    <div className='timer-container'>
+      <div className='timer-circle'>
+        <p>{timeLeft} sec</p>
+      </div>
     </div>
   </div>
 

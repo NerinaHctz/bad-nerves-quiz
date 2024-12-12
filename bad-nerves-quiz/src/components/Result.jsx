@@ -40,7 +40,7 @@ function Result({ score, total }) {
     } else if (score < 20) {
         message = 'Awesome! You are a real fan of Bad Nerves, but a few details still need mastering!'
     } else if (score === 20) {
-        message = 'Perfect score! You are a real Bad Nerves nerd! Congratulations!!'
+        message = 'Perfect score! You are a real Bad Nerd! Congratulations!!'
     }
 
     return <div className='result-container'>
