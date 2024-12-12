@@ -155,7 +155,7 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [score, setScore] = useState(0)
   const [isFinished, setIsFinished] = useState(false)
-  const [timeLeft, setTimeLeft] = useState(60)
+  const [timeLeft, setTimeLeft] = useState(90)
 
   useEffect(() => {
     if (timeLeft === 0) {
