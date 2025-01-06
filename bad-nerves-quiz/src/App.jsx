@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Question from './components/Question'
 import Result from './components/Result'
+import MainPage from './components/MainPage'
+import Timer from './components/Timer'
 
 const questions = [
   {
@@ -151,52 +153,77 @@ const questions = [
   }
 ]
 
-function App() {
-  const [currentQuestion, setCurrentQuestion] = useState(0)
+const App = () => {
+  const [gameStarted, setGameStarted] = useState(false)
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
+  const [answered, setAnswered] = useState(false)
+  const [correctAnswer, setCorrectAnswer] = useState(false)
+  const [time, setTime] = useState(15)
+  const [showQuiz, setShowQuiz] = useState(false)
   const [isFinished, setIsFinished] = useState(false)
-  const [timeLeft, setTimeLeft] = useState(90)
 
-  useEffect(() => {
-    if (timeLeft === 0) {
-      setIsFinished(true)
+  const handleAnswer = (answer) => {
+    if (answer === questions[currentQuestionIndex].answer) {
+      setCorrectAnswer(true)
+      setScore(prevScore => prevScore + 1)
+    } else {
+      setCorrectAnswer(false)
     }
-
-    const timer = setInterval(() => {
-      if (timeLeft > 0 && !isFinished) {
-        setTimeLeft(prevTime => prevTime - 1)
-      }
-    }, 1000);
-
-    return () => clearInterval(timer)
-  }, [timeLeft, isFinished])
-
-  const handleAnswer = (selected) => {
-    if (selected === questions[currentQuestion].answer) setScore(score + 1)
-
-    if (currentQuestion < questions.length - 1) setCurrentQuestion(currentQuestion + 1)
-    else setIsFinished(true)
+    setAnswered(true)
+    setTimeout(() => nextQuestion(), 1000)
   }
 
-  return <div className='game-container'>
-    <h1 className='title'>BAD NERVES QUIZ</h1>
-    <div className='button-container'>
-      {isFinished ? (
-        <Result score={score} total={questions.length} />
-      ) : (
-        <div>
-          <Question
-            questionData={questions[currentQuestion]}
-            onAnswer={handleAnswer}
-          />
+  const nextQuestion = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1)
+      setAnswered(false)
+      setCorrectAnswer(false)
+      setTime(15)
+    } else {
+      finishGame()
+    }
+  }
 
+  const finishGame = () => {
+    setGameStarted(false)
+    setCurrentQuestionIndex(0)
+    setScore(score)
+    setAnswered(true)
+    setCorrectAnswer(false)
+    setTime(15)
+  }
+
+  const handleTimeUp = () => setIsFinished(true)
+
+  return <div>
+    <div className='button-container'>
+      {showQuiz ? (
+        <div className='button-container'>
+          {isFinished ? (
+            <Result score={score} total={questions.length} />
+          ) : (
+            <div>
+              <Question
+                question={questions[currentQuestionIndex].question}
+                options={questions[currentQuestionIndex].options}
+                answer={questions[currentQuestionIndex].answer}
+                setScore={setScore}
+                setAnswered={setAnswered}
+                setCorrectAnswer={setCorrectAnswer}
+                currentQuestionIndex={currentQuestionIndex}
+                setCurrentQuestionIndex={setCurrentQuestionIndex}
+                finishGame={finishGame}
+                score={score}
+                setTime={setTime}
+              />
+            </div>
+          )}
+          <Timer time={time} setTime={setTime} handleTimeUp={handleTimeUp} />
         </div>
+      ) : (
+        <MainPage onStart={() => setShowQuiz(true)} />
       )}
-    </div>
-    <div className='timer-container'>
-      <div className='timer-circle'>
-        <p>{timeLeft} sec</p>
-      </div>
     </div>
   </div>
 

@@ -27,9 +27,9 @@ function Result({ score, total }) {
         }
 
         setTimeout(() => {
-            confettiContainer.remove();
+            confettiContainer.remove()
         }, 5000)
-    };
+    }
 
     if (score < 5) {
         message = 'It seems like you need to listen to more Bad Nerves! Keep trying!'

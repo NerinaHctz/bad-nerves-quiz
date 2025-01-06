@@ -1,11 +1,60 @@
-import React from 'react'
+import { useState } from 'react'
+import ProgressBar from './ProgressBar'
+import './Question.css'
 
-function Question({ questionData, onAnswer }) {
+const Question = ({
+    question,
+    options = [],
+    answer,
+    setScore,
+    currentQuestionIndex,
+    setCurrentQuestionIndex,
+    finishGame,
+    score,
+    setTime
+}) => {
+    const [answered, setAnswered] = useState(false)
+    const [correctAnswer, setCorrectAnswer] = useState(false)
+    const [selectedOption, setSelectedOption] = useState(null)
+
+    const handleAnswer = (seletedOption) => {
+        setAnswered(true)
+        setSelectedOption(selectedOption)
+        if (seletedOption === answer) {
+            setCorrectAnswer(true)
+            setScore(score + 1)
+        } else {
+            setCorrectAnswer(false)
+        }
+
+        setTimeout(() => {
+            setAnswered(false)
+            setSelectedOption(null)
+            if (currentQuestionIndex < 40) {
+                setCurrentQuestionIndex(currentQuestionIndex + 1)
+                setTime(15)
+            } else {
+                finishGame()
+            }
+        }, 500)
+    }
+
     return <div>
-        <h2>{questionData.question}</h2>
-        <div className='button-container'>
-            {questionData.options.map((option, index) => (
-                <button key={index} onClick={() => onAnswer(option)}>
+        <h2>{question}</h2>
+        <div>
+            {options.map((option, index) => (
+                <button key={index}
+                    onClick={() => handleAnswer(option)}
+                    className={
+                        answered
+                            ? option === answer
+                                ? 'correct'
+                                : option === selectedOption
+                                    ? 'incorrect'
+                                    : ''
+                            : ''
+                    }
+                >
                     {option}
                 </button>
             ))}
