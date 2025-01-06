@@ -154,7 +154,6 @@ const questions = [
 ]
 
 const App = () => {
-  const [gameStarted, setGameStarted] = useState(false)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(false)
@@ -162,17 +161,43 @@ const App = () => {
   const [time, setTime] = useState(15)
   const [showQuiz, setShowQuiz] = useState(false)
   const [isFinished, setIsFinished] = useState(false)
+  const [selectedOption, setSelectedOption] = useState(null)
+
+  // const handleAnswer = (answer) => {
+  //   setSelectedOption(answer)
+  //   if (answer === questions[currentQuestionIndex].answer) {
+  //     setCorrectAnswer(true)
+  //     setScore(prevScore => prevScore + 1)
+  //   } else {
+  //     setCorrectAnswer(false)
+  //   }
+  //   setAnswered(true)
+  //   setTimeout(() => nextQuestion(), 1000)
+  // }
+
+  // const nextQuestion = () => {
+  //   if (currentQuestionIndex < questions.length - 1) {
+  //     setCurrentQuestionIndex(currentQuestionIndex + 1)
+  //     setAnswered(false)
+  //     setCorrectAnswer(false)
+  //     setSelectedOption(null)
+  //     setTime(15)
+  //   } else {
+  //     finishGame()
+  //   }
+  // }
 
   const finishGame = () => {
-    setGameStarted(false)
+    setIsFinished(true)
     setCurrentQuestionIndex(0)
-    setScore(score)
     setAnswered(true)
     setCorrectAnswer(false)
-    setTime(15)
+    setTime(0)
   }
 
-  const handleTimeUp = () => setIsFinished(true)
+  const handleTimeUp = () => {
+    setIsFinished(true)
+  }
 
   return <div>
     <div className='button-container'>
@@ -183,9 +208,9 @@ const App = () => {
           ) : (
             <div>
               <Question
-                question={questions[currentQuestionIndex].question}
-                options={questions[currentQuestionIndex].options}
-                answer={questions[currentQuestionIndex].answer}
+                question={questions[currentQuestionIndex]?.question}
+                options={questions[currentQuestionIndex]?.options}
+                answer={questions[currentQuestionIndex]?.answer}
                 setScore={setScore}
                 setAnswered={setAnswered}
                 setCorrectAnswer={setCorrectAnswer}
@@ -194,17 +219,19 @@ const App = () => {
                 finishGame={finishGame}
                 score={score}
                 setTime={setTime}
+                totalQuestions={questions.length}
+                answered={answered}
+                selectedOption={selectedOption}
               />
+              {!isFinished && <Timer time={time} setTime={setTime} handleTimeUp={handleTimeUp} />}
             </div>
           )}
-          <Timer time={time} setTime={setTime} handleTimeUp={handleTimeUp} />
         </div>
       ) : (
         <MainPage onStart={() => setShowQuiz(true)} />
       )}
     </div>
   </div>
-
 }
 
 export default App

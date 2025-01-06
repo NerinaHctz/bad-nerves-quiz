@@ -11,7 +11,8 @@ const Question = ({
     setCurrentQuestionIndex,
     finishGame,
     score,
-    setTime
+    setTime,
+    totalQuestions
 }) => {
     const [answered, setAnswered] = useState(false)
     const [correctAnswer, setCorrectAnswer] = useState(false)
@@ -40,6 +41,7 @@ const Question = ({
     }
 
     return <div>
+        <ProgressBar currentQuestionIndex={currentQuestionIndex} totalQuestions={totalQuestions} />
         <h2>{question}</h2>
         <div>
             {options.map((option, index) => (

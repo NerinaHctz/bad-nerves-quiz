@@ -1,35 +1,17 @@
 .progress-bar-container {
     width: 100%;
-    background-color: rgba(255, 0, 0, 0.2);
-    /* Color semitransparente */
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    position: relative;
     height: 10px;
-    /* Asegúrate de que la altura esté definida aquí */
+    background-color: rgba(139, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
 }
 
 .progress-bar {
     height: 100%;
-    /* Asegúrate de que la barra de progreso ocupe toda la altura del contenedor */
+    width: 0;
     background-color: red;
-    /* Color rojo */
-    transition: width 0.5s ease;
-}
-
-.progress-numbers {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.progress-numbers span {
-    width: 20px;
-    text-align: center;
-}
-
-.progress-numbers .completed {
-    color: red;
-    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
 }
