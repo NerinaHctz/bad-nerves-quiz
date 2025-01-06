@@ -17,10 +17,10 @@ const Question = ({
     const [correctAnswer, setCorrectAnswer] = useState(false)
     const [selectedOption, setSelectedOption] = useState(null)
 
-    const handleAnswer = (seletedOption) => {
+    const handleAnswer = (selectedOption) => {
         setAnswered(true)
         setSelectedOption(selectedOption)
-        if (seletedOption === answer) {
+        if (selectedOption === answer) {
             setCorrectAnswer(true)
             setScore(score + 1)
         } else {
@@ -43,12 +43,15 @@ const Question = ({
         <h2>{question}</h2>
         <div>
             {options.map((option, index) => (
-                <button key={index}
+                <button
+                    key={index}
                     onClick={() => handleAnswer(option)}
                     className={
                         answered
                             ? option === answer
-                                ? 'correct'
+                                ? selectedOption !== answer
+                                    ? 'correct-transparent'
+                                    : 'correct'
                                 : option === selectedOption
                                     ? 'incorrect'
                                     : ''

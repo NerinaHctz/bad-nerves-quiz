@@ -7,3 +7,8 @@
     background-color: red;
     color: white;
 }
+
+.correct-transparent {
+    background-color: rgba(0, 128, 0, 0.61);
+    color: white;
+}

@@ -163,28 +163,6 @@ const App = () => {
   const [showQuiz, setShowQuiz] = useState(false)
   const [isFinished, setIsFinished] = useState(false)
 
-  const handleAnswer = (answer) => {
-    if (answer === questions[currentQuestionIndex].answer) {
-      setCorrectAnswer(true)
-      setScore(prevScore => prevScore + 1)
-    } else {
-      setCorrectAnswer(false)
-    }
-    setAnswered(true)
-    setTimeout(() => nextQuestion(), 1000)
-  }
-
-  const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
-      setAnswered(false)
-      setCorrectAnswer(false)
-      setTime(15)
-    } else {
-      finishGame()
-    }
-  }
-
   const finishGame = () => {
     setGameStarted(false)
     setCurrentQuestionIndex(0)
