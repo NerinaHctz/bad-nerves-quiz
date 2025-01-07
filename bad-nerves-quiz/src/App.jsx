@@ -6,14 +6,14 @@ import Timer from './components/Timer'
 
 const questions = [
   {
-    question: 'In what year was Bad Nerves formed?',
+    question: 'In what year was the band formed?',
     options: [
       '2015', '2016', '2017'
     ],
     answer: '2016'
   },
   {
-    question: 'What musical genre defines Bad Nerves?',
+    question: 'What musical genre defines them?',
     options: [
       'Punk rock', 'Indie rock', 'Power Pop'
     ],
@@ -43,20 +43,20 @@ const questions = [
     answer: 'UK'
   },
   {
-    question: 'What influences do Bad Nerves members cite in their music?',
+    question: 'What influences do members cite in their music?',
     options: [
       'Blur', 'Nirvana', 'The Ramones'
     ],
     answer: 'The Ramones'
   },
   {
-    question: 'What are the names of the members?',
+    question: "What's the drummer's name?",
     options: [
-      'Kevin, Bryan, Nick, Howie, and AJ',
-      'Bobby, Samuel, Will, George, and Jon',
-      'Steve, Glen, Johnny, Paul, and Sid'
+      'Kevin',
+      'Samuel',
+      'Steve'
     ],
-    answer: 'Bobby, Samuel, Will, George, and Jon'
+    answer: 'Samuel'
   },
   {
     question: 'What is the name of the song that does not appear on any of their albums?',
@@ -73,7 +73,7 @@ const questions = [
     answer: '2020'
   },
   {
-    question: 'What was the first song released by Bad Nerves?',
+    question: 'What was the first song released by them?',
     options: [
       'Alright', 'Baby Drummer', 'Dreaming'
     ],
@@ -87,7 +87,7 @@ const questions = [
     answer: '12'
   },
   {
-    question: 'Which city did Bad Nerves form in?',
+    question: 'Which city did the band form in?',
     options: [
       'Essex', 'Chicago', 'Sidney'
     ],
@@ -110,7 +110,7 @@ const questions = [
     answer: 'Abbey Road by The Beatles'
   },
   {
-    question: 'What band has accompanied Bad Nerves on their European tour?',
+    question: 'What band has accompanied the band on their European tour?',
     options: [
       'Ultra Q', 'Royal Blood', 'Green Day'
     ],
@@ -131,7 +131,7 @@ const questions = [
     answer: "Can't Be Mine"
   },
   {
-    question: "Which label released Bad Nerves' debut album?",
+    question: 'Which label released their debut album?',
     options: [
       'XL Recordings', 'Suburban Records', 'Sub Pop'
     ],
@@ -163,30 +163,6 @@ const App = () => {
   const [isFinished, setIsFinished] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
   const [animateTitle, setAnimateTitle] = useState(false)
-
-  // const handleAnswer = (answer) => {
-  //   setSelectedOption(answer)
-  //   if (answer === questions[currentQuestionIndex].answer) {
-  //     setCorrectAnswer(true)
-  //     setScore(prevScore => prevScore + 1)
-  //   } else {
-  //     setCorrectAnswer(false)
-  //   }
-  //   setAnswered(true)
-  //   setTimeout(() => nextQuestion(), 1000)
-  // }
-
-  // const nextQuestion = () => {
-  //   if (currentQuestionIndex < questions.length - 1) {
-  //     setCurrentQuestionIndex(currentQuestionIndex + 1)
-  //     setAnswered(false)
-  //     setCorrectAnswer(false)
-  //     setSelectedOption(null)
-  //     setTime(15)
-  //   } else {
-  //     finishGame()
-  //   }
-  // }
 
   const handleStartQuiz = () => {
     setAnimateTitle(true)

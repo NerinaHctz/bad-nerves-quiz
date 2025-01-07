@@ -47,9 +47,14 @@ function Result({ score, total }) {
         <h1>Game Over!</h1>
         <p>Your final score is: {score} out of {total}</p>
         <p>{message}</p>
-        <a href='https://open.spotify.com/intl-es/artist/7IPyXY4ZHkuvQY1ny8TnMQ' target='_blank' rel='noopener noreferrer'>
-            <img src='./spotify.png' alt='Spotify logo' width='50' height='50' />
-        </a>
+        <div className='social-media'>
+            <a href='https://open.spotify.com/intl-es/artist/7IPyXY4ZHkuvQY1ny8TnMQ' target='_blank' rel='noopener noreferrer'>
+                <img src='./spotify.png' alt='Spotify logo' width='40' height='40' />
+            </a>
+            <a href='https://www.instagram.com/badbadnerves/' target='_blank' rel='noopener noreferrer'>
+                <img src='./instagram.png' alt='Instagram logo' width='40' height='40' />
+            </a>
+        </div>
     </div>
 }
 
