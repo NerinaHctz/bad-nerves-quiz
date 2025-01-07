@@ -162,6 +162,7 @@ const App = () => {
   const [showQuiz, setShowQuiz] = useState(false)
   const [isFinished, setIsFinished] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
+  const [animateTitle, setAnimateTitle] = useState(false)
 
   // const handleAnswer = (answer) => {
   //   setSelectedOption(answer)
@@ -187,6 +188,11 @@ const App = () => {
   //   }
   // }
 
+  const handleStartQuiz = () => {
+    setAnimateTitle(true)
+    setTimeout(() => setShowQuiz(true), 1000)
+  }
+
   const finishGame = () => {
     setIsFinished(true)
     setCurrentQuestionIndex(0)
@@ -199,7 +205,7 @@ const App = () => {
     setIsFinished(true)
   }
 
-  return <div>
+  return <div className='game-container'>
     <div className='button-container'>
       {showQuiz ? (
         <div className='button-container'>
@@ -223,12 +229,12 @@ const App = () => {
                 answered={answered}
                 selectedOption={selectedOption}
               />
-              {!isFinished && <Timer time={time} setTime={setTime} handleTimeUp={handleTimeUp} />}
+              {!isFinished && <Timer time={time} setTime={setTime} handleTimeUp={handleTimeUp} isFinished={isFinished} />}
             </div>
           )}
         </div>
       ) : (
-        <MainPage onStart={() => setShowQuiz(true)} />
+        <MainPage onStart={handleStartQuiz} animateTitle={animateTitle} />
       )}
     </div>
   </div>

@@ -97,7 +97,7 @@ button {
 
 .game-container {
   position: relative;
-  border: 6px solid rgb(235, 3, 3);
+  /* border: 6px solid rgb(235, 3, 3); */
   padding: 20px;
   height: 100vh;
   width: 100%;
@@ -106,7 +106,7 @@ button {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  background-image: url('https://i.scdn.co/image/ab67616d0000b2732d7099fc381829b61795df23');
+  background-image: url('/badnerves.png');
   background-size: cover;
   background-position: center;
 }
@@ -185,4 +185,23 @@ button {
   bottom: 0;
   pointer-events: none;
   z-index: 9999;
+}
+
+@keyframes moveTitle {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100px);
+    /* Ajusta según sea necesario */
+  }
+}
+
+.title {
+  transition: transform 1s ease;
+}
+
+.title.animate {
+  animation: moveTitle 1s forwards;
 }

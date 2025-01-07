@@ -1,7 +1,11 @@
 import { useEffect } from 'react'
 
-const Timer = ({ time, setTime, handleTimeUp }) => {
+const Timer = ({ time, setTime, handleTimeUp, isFinished }) => {
     useEffect(() => {
+        if (isFinished) {
+            return
+        }
+
         const timer = setInterval(() => {
             setTime(prevTime => {
                 if (prevTime <= 1) {
@@ -14,7 +18,7 @@ const Timer = ({ time, setTime, handleTimeUp }) => {
         }, 1000)
 
         return () => clearInterval(timer)
-    }, [setTime, handleTimeUp])
+    }, [setTime, handleTimeUp, isFinished])
 
     return <div>
         <p>{time}</p>

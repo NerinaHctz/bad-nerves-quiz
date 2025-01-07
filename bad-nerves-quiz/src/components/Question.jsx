@@ -31,7 +31,7 @@ const Question = ({
         setTimeout(() => {
             setAnswered(false)
             setSelectedOption(null)
-            if (currentQuestionIndex < 40) {
+            if (currentQuestionIndex < totalQuestions - 1) {
                 setCurrentQuestionIndex(currentQuestionIndex + 1)
                 setTime(15)
             } else {
@@ -41,6 +41,9 @@ const Question = ({
     }
 
     return <div>
+        <header>
+            <h1 className='title'>Bad Nerves Quiz</h1>
+        </header>
         <ProgressBar currentQuestionIndex={currentQuestionIndex} totalQuestions={totalQuestions} />
         <h2>{question}</h2>
         <div>
