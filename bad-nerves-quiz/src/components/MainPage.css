@@ -1,0 +1,58 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.start-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: calc(100%);
+    margin: 16px;
+    font-size: 18px;
+    position: absolute;
+    bottom: 25px;
+}
+
+.title {
+    transition: transform 1s ease;
+    font-size: 45px;
+    margin-top: -150px;
+}
+
+.title .bad-nerves {
+    font-family: 'Inter', sans-serif;
+    color: red;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.title .quiz {
+    font-family: 'Karantina', sans-serif;
+    color: white;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    margin-top: -10px;
+}
+
+.title.animate {
+    animation: moveTitle 1s forwards;
+}

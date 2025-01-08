@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './Result.css'
 
 function Result({ score, total }) {
     let message

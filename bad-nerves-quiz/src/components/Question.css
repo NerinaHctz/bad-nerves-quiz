@@ -80,3 +80,31 @@
     font-size: 28px;
     font-family: 'Roboto', sans-serif;
 }
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}

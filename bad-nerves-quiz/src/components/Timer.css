@@ -1,0 +1,24 @@
+.timer-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.timer-circle {
+    width: 40px;
+    height: 40px;
+    border: 6px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+}
+
+.timer-circle p {
+    margin: 0;
+}
