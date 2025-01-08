@@ -20,8 +20,10 @@ const Timer = ({ time, setTime, handleTimeUp, isFinished }) => {
         return () => clearInterval(timer)
     }, [setTime, handleTimeUp, isFinished])
 
-    return <div>
-        <p>{time}</p>
+    return <div className='timer-container'>
+        <div className='timer-circle'>
+            <p>{time}</p>
+        </div>
     </div>
 }
 

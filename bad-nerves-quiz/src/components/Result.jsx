@@ -44,8 +44,16 @@ function Result({ score, total }) {
     }
 
     return <div className='result-container'>
-        <h1>Game Over!</h1>
-        <p>Your final score is: {score} out of {total}</p>
+        <h1 className='title'>
+            <span className='bad-nerves'>BAD NERVES</span> <span className='quiz'>Quiz</span>
+        </h1>
+        <h1 className='result-title'>Game Over!</h1>
+        <p>
+            <span className='result-text-red'>Your final score is: </span>
+            <span className='result-score'>{score}</span>
+            <span className='result-text-red'> out of </span>
+            <span className='result-score'>{total}</span>
+        </p>
         <p>{message}</p>
         <div className='social-media'>
             <a href='https://open.spotify.com/intl-es/artist/7IPyXY4ZHkuvQY1ny8TnMQ' target='_blank' rel='noopener noreferrer'>

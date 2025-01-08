@@ -42,11 +42,13 @@ const Question = ({
 
     return <div>
         <header>
-            <h1 className='title'>Bad Nerves Quiz</h1>
+            <h1 className='question-title'>
+                <span className='bad-nerves'>BAD NERVES</span> <span className='quiz'>Quiz</span>
+            </h1>
         </header>
         <ProgressBar currentQuestionIndex={currentQuestionIndex} totalQuestions={totalQuestions} />
-        <h2>{question}</h2>
-        <div>
+        <h2 className='questions'>{question}</h2>
+        <div className='button-container'>
             {options.map((option, index) => (
                 <button
                     key={index}
