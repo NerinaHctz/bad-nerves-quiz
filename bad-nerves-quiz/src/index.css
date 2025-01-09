@@ -16,7 +16,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body,
+html {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -25,6 +26,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #000000;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .game-container {

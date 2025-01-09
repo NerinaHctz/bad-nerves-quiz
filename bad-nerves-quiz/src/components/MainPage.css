@@ -70,3 +70,34 @@
 .title.animate {
     animation: moveTitle 1s forwards;
 }
+
+@media (max-width: 768px) {
+    .main-page {
+        padding: 20px;
+        overflow: hidden;
+        /* Evita el scroll en móviles */
+    }
+
+    .title {
+        font-size: 36px;
+        /* Ajusta el tamaño del título en móviles */
+    }
+
+    .subtitle {
+        margin-top: 80px;
+        /* Ajusta el margen superior en móviles */
+    }
+
+    .text {
+        font-size: small;
+        /* Ajusta el tamaño del texto en móviles */
+        margin-top: 5px;
+    }
+
+    .start-button {
+        font-size: 16px;
+        /* Ajusta el tamaño del botón en móviles */
+        bottom: 15px;
+        /* Ajusta la posición del botón en móviles */
+    }
+}
