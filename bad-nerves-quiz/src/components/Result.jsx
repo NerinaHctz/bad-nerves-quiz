@@ -46,7 +46,7 @@ function Result({ score, total }) {
     }
 
     return <div className='result-container'>
-        <h1 className='title'>
+        <h1 className='question-title'>
             <span className='bad-nerves'>BAD NERVES</span> <span className='quiz'>Quiz</span>
         </h1>
         <h1 className='result-title'>Game Over!</h1>

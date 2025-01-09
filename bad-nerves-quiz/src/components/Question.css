@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Karantina:wght@300;400;700&display=swap');
 
-/* .title.animate {
+.title.animate {
     animation: moveTitle 0.5s forwards;
 }
 
@@ -15,7 +15,7 @@
 
 .title.animate .quiz {
     font-size: 34px;
-} */
+}
 
 .correct {
     background-color: green;

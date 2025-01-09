@@ -1,4 +1,4 @@
-/* .main-page {
+.main-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +28,7 @@
     }
 
     100% {
-        transform: translateY(-95px);
+        transform: translateY(-59px);
         font-size: 24px;
     }
 }
@@ -36,7 +36,7 @@
 .title {
     transition: transform 1s ease;
     position: fixed;
-    top: 106px;
+    top: 70px;
     width: 100%;
     text-align: center;
 }
@@ -69,95 +69,4 @@
 
 .title.animate {
     animation: moveTitle 1s forwards;
-} */
-
-.main-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-}
-
-.start-button {
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    width: calc(100% - 32px);
-    margin: 16px;
-    font-size: 18px;
-    position: absolute;
-    bottom: 25px;
-}
-
-.title {
-    font-size: 45px;
-    position: fixed;
-    /* Fija la posición del título */
-    top: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 1000;
-}
-
-.title .bad-nerves {
-    font-family: 'Inter', sans-serif;
-    color: red;
-    font-weight: 900;
-    letter-spacing: -4px;
-}
-
-.title .quiz {
-    font-family: 'Karantina', sans-serif;
-    color: white;
-    font-weight: 200;
-    font-size: 60px;
-}
-
-.subtitle {
-    font-family: 'Roboto', sans-serif;
-    margin-top: 100px;
-    /* Ajusta este valor según sea necesario */
-}
-
-.text {
-    font-family: 'Roboto', sans-serif;
-    font-size: medium;
-    margin-top: 10px;
-}
-
-/* Diseño responsivo para móviles */
-@media (max-width: 768px) {
-    .main-page {
-        padding: 20px;
-        overflow: hidden;
-        /* Evita el scroll en móviles */
-    }
-
-    .title {
-        font-size: 36px;
-        /* Ajusta el tamaño del título en móviles */
-    }
-
-    .subtitle {
-        margin-top: 80px;
-        /* Ajusta el margen superior en móviles */
-    }
-
-    .text {
-        font-size: small;
-        /* Ajusta el tamaño del texto en móviles */
-        margin-top: 5px;
-    }
-
-    .start-button {
-        font-size: 16px;
-        /* Ajusta el tamaño del botón en móviles */
-        bottom: 15px;
-        /* Ajusta la posición del botón en móviles */
-    }
 }
