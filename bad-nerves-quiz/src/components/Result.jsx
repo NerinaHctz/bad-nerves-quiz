@@ -11,6 +11,7 @@ function Result({ score, total }) {
     }, [score, total])
 
     const createConfetti = () => {
+        console.log('creating confetti')
         const confettiContainer = document.createElement('div')
         confettiContainer.className = 'confetti-container'
         document.body.appendChild(confettiContainer)

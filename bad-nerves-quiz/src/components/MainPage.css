@@ -21,10 +21,24 @@
     bottom: 25px;
 }
 
+@keyframes moveTitle {
+    0% {
+        transform: translateY(0);
+        font-size: 45px;
+    }
+
+    100% {
+        transform: translateY(-95px);
+        font-size: 24px;
+    }
+}
+
 .title {
     transition: transform 1s ease;
-    font-size: 45px;
-    margin-top: -150px;
+    position: fixed;
+    top: 106px;
+    width: 100%;
+    text-align: center;
 }
 
 .title .bad-nerves {
@@ -37,7 +51,7 @@
 .title .quiz {
     font-family: 'Karantina', sans-serif;
     color: white;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 60px;
 }
 

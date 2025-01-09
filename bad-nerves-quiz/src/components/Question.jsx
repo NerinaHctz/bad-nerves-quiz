@@ -40,7 +40,7 @@ const Question = ({
         }, 500)
     }
 
-    return <div>
+    return <>
         <header>
             <h1 className='question-title'>
                 <span className='bad-nerves'>BAD NERVES</span> <span className='quiz'>Quiz</span>
@@ -69,7 +69,8 @@ const Question = ({
                 </button>
             ))}
         </div>
-    </div>
+        <div className='space'></div>
+    </>
 }
 
 export default Question

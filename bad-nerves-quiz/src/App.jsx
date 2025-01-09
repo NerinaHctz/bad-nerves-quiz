@@ -27,7 +27,7 @@ const questions = [
     answer: 'Bad Nerves'
   },
   {
-    question: 'Complete the following song lyric: "What did you say?..."',
+    question: 'Complete the following song lyric: \'What did you say?...\'',
     options: [
       'What are you waiting for just call me on the phone',
       'Do you never learn? Are you listening?',
@@ -50,11 +50,11 @@ const questions = [
     answer: 'The Ramones'
   },
   {
-    question: "What's the drummer's name?",
+    question: 'What\'s the drummer\'s name?',
     options: [
-      'Kevin',
+      'Bobby',
       'Samuel',
-      'Steve'
+      'Will'
     ],
     answer: 'Samuel'
   },
@@ -94,7 +94,7 @@ const questions = [
     answer: 'Essex'
   },
   {
-    question: 'Complete the following song lyric: "Record freedom, ____, rain in the sky"',
+    question: 'Complete the following song lyric: \'Record freedom, ____, rain in the sky\'',
     options: [
       'Liberty',
       'Motorways',
@@ -103,7 +103,7 @@ const questions = [
     answer: 'Liberty'
   },
   {
-    question: 'What does Bobby describe as "the perfect album from start to finish"?',
+    question: 'What does Bobby describe as \'the perfect album from start to finish\'?',
     options: [
       'Rocket to Russia by the Ramones', 'Abbey Road by The Beatles', 'London Calling by The Clash'
     ],
@@ -126,9 +126,9 @@ const questions = [
   {
     question: 'What is their most famous song?',
     options: [
-      'Antidote', "Can't Be Mine", 'Dreaming'
+      'Antidote', 'Can\'t Be Mine', 'Dreaming'
     ],
-    answer: "Can't Be Mine"
+    answer: 'Can\'t Be Mine'
   },
   {
     question: 'Which label released their debut album?',
@@ -145,7 +145,7 @@ const questions = [
     answer: 'USA'
   },
   {
-    question: "What was Jimmy's hair made of?",
+    question: 'What was Jimmy\'s hair made of?',
     options: [
       'Hair', 'Mud', 'Fire'
     ],
@@ -182,13 +182,13 @@ const App = () => {
   }
 
   return <div className='game-container'>
-    <div className='button-container'>
+    <>
       {showQuiz ? (
         <div className='button-container'>
           {isFinished ? (
             <Result score={score} total={questions.length} />
           ) : (
-            <div>
+            <>
               <Question
                 question={questions[currentQuestionIndex]?.question}
                 options={questions[currentQuestionIndex]?.options}
@@ -206,13 +206,13 @@ const App = () => {
                 selectedOption={selectedOption}
               />
               {!isFinished && <Timer time={time} setTime={setTime} handleTimeUp={handleTimeUp} isFinished={isFinished} />}
-            </div>
+            </>
           )}
         </div>
       ) : (
         <MainPage onStart={handleStartQuiz} animateTitle={animateTitle} />
       )}
-    </div>
+    </>
   </div>
 }
 

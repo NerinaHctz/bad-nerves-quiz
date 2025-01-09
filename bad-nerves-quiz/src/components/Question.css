@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Karantina:wght@300;400;700&display=swap');
 
-@keyframes moveTitle {
-    0% {
-        transform: translateY(0);
-        font-size: 45px;
-        padding: 20px 0;
-    }
-
-    100% {
-        transform: translateY(-200px);
-        font-size: 24px;
-        padding: 10px 0;
-        margin-top: 40px;
-    }
-}
-
-.title {
-    transition: font-size 0.5s ease, padding 0.5s ease;
-    font-size: 45px;
-    margin-top: -200px;
-}
-
 .title.animate {
     animation: moveTitle 0.5s forwards;
 }
@@ -30,11 +9,12 @@
     transition: font-size 0.5s ease;
 }
 
-.title.animate .bad-nerves,
-.title.animate .quiz {
+.title.animate .bad-nerves {
     font-size: 24px;
-    /* font-size: 34px; */
+}
 
+.title.animate .quiz {
+    font-size: 34px;
 }
 
 .correct {
@@ -60,6 +40,7 @@
     padding: 10px 0;
     text-align: center;
     z-index: 1000;
+    left: 0;
 }
 
 .question-title .bad-nerves {
@@ -77,7 +58,7 @@
 }
 
 .questions {
-    font-size: 28px;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -93,7 +74,7 @@ h2 {
     gap: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 button {
@@ -107,4 +88,8 @@ button {
     color: white;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
+}
+
+.space {
+    height: 10px;
 }
