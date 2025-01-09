@@ -93,17 +93,3 @@ button {
 .space {
     height: 10px;
 }
-
-@media (max-width: 768px) {
-    .content {
-        margin-top: 80px;
-        /* Ajusta el margen superior en móviles */
-    }
-
-    .timer-circle {
-        width: 30px;
-        /* Ajusta el tamaño del temporizador en móviles */
-        height: 30px;
-        font-size: 14px;
-    }
-}
