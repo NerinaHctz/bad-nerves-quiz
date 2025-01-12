@@ -6,14 +6,14 @@ import Timer from './components/Timer'
 
 const questions = [
   {
-    question: 'In what year was the band formed?',
+    question: 'How many members are in the band?',
     options: [
-      '2015', '2016', '2017'
+      '4', '5', '6'
     ],
-    answer: '2016'
+    answer: '5'
   },
   {
-    question: 'What musical genre defines them?',
+    question: 'How do they define their musical genre?',
     options: [
       'Punk rock', 'Indie rock', 'Power Pop'
     ],
@@ -43,7 +43,7 @@ const questions = [
     answer: 'UK'
   },
   {
-    question: 'What influences do members cite in their music?',
+    question: 'Which of these bands is named by them as one of their biggest influences?',
     options: [
       'Blur', 'Nirvana', 'The Ramones'
     ],
@@ -73,7 +73,7 @@ const questions = [
     answer: '2020'
   },
   {
-    question: 'What was the first song released by them?',
+    question: 'What was the first song released by them on Spotify?',
     options: [
       'Alright', 'Baby Drummer', 'Dreaming'
     ],
@@ -89,7 +89,7 @@ const questions = [
   {
     question: 'Which city did the band form in?',
     options: [
-      'Essex', 'Chicago', 'Sidney'
+      'Essex', 'Liverpool', 'Birmingham'
     ],
     answer: 'Essex'
   },
@@ -110,7 +110,7 @@ const questions = [
     answer: 'Abbey Road by The Beatles'
   },
   {
-    question: 'What band has accompanied the band on their European tour?',
+    question: 'Which band has supported them on their 2024 European tour?',
     options: [
       'Ultra Q', 'Royal Blood', 'Green Day'
     ],
@@ -138,11 +138,11 @@ const questions = [
     answer: 'Suburban Records'
   },
   {
-    question: 'Which Bad Nerves music video has the most views on YouTube?',
+    question: 'What is the name of the fourth song on the B-side of the Still Nervous album?',
     options: [
-      'Radio Punk', 'USA', 'Television'
+      'You should know by now', 'Too lazy to love', 'Alright'
     ],
-    answer: 'USA'
+    answer: 'You should know by now'
   },
   {
     question: 'What was Jimmy\'s hair made of?',
